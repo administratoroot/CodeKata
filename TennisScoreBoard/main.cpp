@@ -1,53 +1,42 @@
 #include "gtest/gtest.h"
-#include <string>
-
-class PlayerInfo
+#include "TennisScoreBoard.h"
+std::string Scores[] = {"DEUCE", "ADVANTAGE", "WIN" };
+std::string getDeuceOrWinnaOrAdvantage(const PlayerInfo& playerA, const PlayerInfo& playerB)
 {
-public:
-    PlayerInfo(std::string sName, int nScore) :m_sPlayerName(sName), m_nScore(nScore) {};
-    std::string GetPlayerName() { return m_sPlayerName; }
-    int GetPlayerScore() { return m_nScore; }
-    int DeltaScore(PlayerInfo& otherPlayer)
+    if (playerA.GetPlayerScore() == playerB.GetPlayerScore())
     {
-        return this->m_nScore - otherPlayer.m_nScore;
+        return Scores[0];
     }
-private:
-    std::string m_sPlayerName;
-    int m_nScore;
-};
-
-std::string JointScores(PlayerInfo playerA, PlayerInfo playerB)
-{
-    static const std::string scoreArray[] = { "LOVE", "FIFTEEN", "THIRTY", "FORTY" };
-
-    return scoreArray[playerA.GetPlayerScore()] + " " + scoreArray[playerB.GetPlayerScore()];
+    return (playerA.GetPlayerScore() > playerB.GetPlayerScore()) ? 
+        playerA.GetPlayerName() + " " + ((playerA.DeltaScore(playerB) < 2) ? Scores[1] : Scores[2])
+      : playerB.GetPlayerName() + " " + ((playerB.DeltaScore(playerA) < 2) ? Scores[1] : Scores[2]);
 }
 
-std::string Tennis(PlayerInfo playerA, PlayerInfo playerB)
+std::string Tennis(const PlayerInfo& playerA, const PlayerInfo& playerB)
 {
-
     if (playerA.GetPlayerScore() + playerB.GetPlayerScore() == 0)
     {
-
         return "LOVE ALL";
-
     }
 
-    if ((playerB.GetPlayerScore() == playerA.GetPlayerScore() && playerA.GetPlayerScore() >= 3))
+    if ((playerA.GetPlayerScore() <= 3 && playerB.GetPlayerScore() <= 3))
     {
-        return "DEUCE";
+        if (playerB.GetPlayerScore() == playerA.GetPlayerScore())
+        {
+            if (playerA.GetPlayerScore() == 0)
+            {
+                return "LOVE ALL";
+            }
+            else if (playerA.GetPlayerScore() == 3)
+            {
+                return "DEUCE";
+            }
+        }
+        return playerA.makeScoresWith(playerB);
     }
-    else if ((playerA.GetPlayerScore() <= 3 && playerB.GetPlayerScore() <= 3))
+    else if (playerA.GetPlayerScore() > 3 || playerB.GetPlayerScore() > 3)
     {
-        return JointScores(playerA, playerB);
-    }
-    else if (playerA.GetPlayerScore() >= 4 && playerA.DeltaScore(playerB) >= 2)
-    {
-        return playerA.GetPlayerName() + " " + "WIN";
-    }
-    else if (playerB.GetPlayerScore() >= 4 && playerA.DeltaScore(playerB) <= -2)
-    {
-        return playerB.GetPlayerName() + " " + "WIN";
+        return getDeuceOrWinnaOrAdvantage(playerA, playerB);
     }
     return "";
 }
