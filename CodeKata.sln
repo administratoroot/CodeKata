@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodeKata", "CodeKata\CodeKata.vcxproj", "{4FEB5E05-C366-4300-A0FB-49148B2E9F0F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodeKata", "codekata\CodeKata.vcxproj", "{4FEB5E05-C366-4300-A0FB-49148B2E9F0F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TennisScoreBoard", "TennisScoreBoard\TennisScoreBoard.vcxproj", "{4EDE1A1A-88D8-4F8F-9EFD-6A1D01C2EF52}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CalcGCD", "CalcGCD\CalcGCD.vcxproj", "{BB9C6D5A-1CCD-4D33-8221-36E4595EE627}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EightQueen", "EightQueen\EightQueen.vcxproj", "{0EF439B7-8491-4101-BB8B-44ADCA2D805B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{4EDE1A1A-88D8-4F8F-9EFD-6A1D01C2EF52}.Debug|Win32.Build.0 = Debug|Win32
 		{4EDE1A1A-88D8-4F8F-9EFD-6A1D01C2EF52}.Release|Win32.ActiveCfg = Release|Win32
 		{4EDE1A1A-88D8-4F8F-9EFD-6A1D01C2EF52}.Release|Win32.Build.0 = Release|Win32
+		{BB9C6D5A-1CCD-4D33-8221-36E4595EE627}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BB9C6D5A-1CCD-4D33-8221-36E4595EE627}.Debug|Win32.Build.0 = Debug|Win32
+		{BB9C6D5A-1CCD-4D33-8221-36E4595EE627}.Release|Win32.ActiveCfg = Release|Win32
+		{BB9C6D5A-1CCD-4D33-8221-36E4595EE627}.Release|Win32.Build.0 = Release|Win32
+		{0EF439B7-8491-4101-BB8B-44ADCA2D805B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0EF439B7-8491-4101-BB8B-44ADCA2D805B}.Debug|Win32.Build.0 = Debug|Win32
+		{0EF439B7-8491-4101-BB8B-44ADCA2D805B}.Release|Win32.ActiveCfg = Release|Win32
+		{0EF439B7-8491-4101-BB8B-44ADCA2D805B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

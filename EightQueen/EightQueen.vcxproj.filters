@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="EightQueen.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="TennisScoreBoard.cpp">
+    <ClCompile Include="ChessBoard.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TennisScoreBoard.h">
+    <ClInclude Include="ChessBoard.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
