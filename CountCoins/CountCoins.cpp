@@ -30,7 +30,7 @@ enum EnCoinType
     Coin_Dime = 10,
     Coin_Quarter = 25
 };
-//sometime not the problem is complex,it is we make the problem complex and difficult.
+//sometimes not the problem is complex,it is we make the problem complex and difficult.
 //zhangxun 2017/2/25 0:16AM
 int CoinCounts(int nValue)
 {
